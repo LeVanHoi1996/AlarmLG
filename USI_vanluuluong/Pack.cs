@@ -89,7 +89,7 @@ namespace Baodongchem
                 else
                 {
                     tb_mauA.DefaultView.Sort = "C3 DESC";
-                    DataTable dtCloned = tb_mauA.Select().Take(7).CopyToDataTable();
+                    DataTable dtCloned = tb_mauA.Select().Take(15).CopyToDataTable();
                     dtCloned.DefaultView.Sort = "C3 DESC";
                     dgA.DataSource = dtCloned;
                 }
@@ -104,7 +104,7 @@ namespace Baodongchem
                 else
                 {
                     tb_mauB.DefaultView.Sort = "C3 DESC";
-                    DataTable dtCloned = tb_mauB.Select().Take(7).CopyToDataTable();
+                    DataTable dtCloned = tb_mauB.Select().Take(15).CopyToDataTable();
                     dtCloned.DefaultView.Sort = "C3 DESC";
                     dgB.DataSource = dtCloned;
                 }
@@ -119,7 +119,7 @@ namespace Baodongchem
                 else
                 {
                     tb_mauC.DefaultView.Sort = "C3 DESC";
-                    DataTable dtCloned = tb_mauC.Select().Take(7).CopyToDataTable();
+                    DataTable dtCloned = tb_mauC.Select().Take(15).CopyToDataTable();
                     dtCloned.DefaultView.Sort = "C3 DESC";
                     dgC.DataSource = dtCloned;
                 }
@@ -155,28 +155,29 @@ namespace Baodongchem
 
                 if (DATA_PLC_SIPACK.isWLineA == 1)
                 {
-                    PLA.BackColor = Color.Green;
+                    lb_LVA.BackColor = Color.Green;
                 }
                 else
                 {
-                    PLA.BackColor = Color.DarkOrange;
+                    lb_LVA.BackColor = Color.DarkViolet;
                 }
 
                 if (DATA_PLC_SIPACK.isWLineB == 1)
                 {
-                    PLB.BackColor = Color.Green;
+                    lb_LVB.BackColor = Color.Green;
                 }
                 else
                 {
-                    PLB.BackColor = Color.DarkOrange;
+
+                    lb_LVB.BackColor = Color.DarkViolet;
                 }
                 if (DATA_PLC_SIPACK.isWLineC == 1)
                 {
-                    PLC.BackColor = Color.Green;
+                    lb_LVC.BackColor = Color.Green;
                 }
                 else
                 {
-                    PLC.BackColor = Color.DarkOrange;
+                    lb_LVC.BackColor = Color.DarkViolet;
                 }
             }
             catch (Exception)
@@ -185,6 +186,16 @@ namespace Baodongchem
         }
 
         private void Pack_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PLA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbIC_A_EditValueChanged(object sender, EventArgs e)
         {
 
         }

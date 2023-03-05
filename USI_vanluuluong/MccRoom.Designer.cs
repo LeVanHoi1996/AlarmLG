@@ -723,7 +723,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1140, 80);
             this.label2.TabIndex = 383;
-            this.label2.Text = "EART LEAK ALARM";
+            this.label2.Text = "EARTH LEAK ALARM";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel8
@@ -895,7 +895,7 @@
             this.labelControl21.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.labelControl21.Size = new System.Drawing.Size(266, 49);
             this.labelControl21.TabIndex = 35;
-            this.labelControl21.Text = "T.R. ROOM TEMP- MUMIDITY";
+            this.labelControl21.Text = "T.R. ROOM TEMP- HUMIDITY";
             // 
             // labelControl20
             // 
@@ -1091,7 +1091,7 @@
             this.labelControl24.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.labelControl24.Size = new System.Drawing.Size(266, 49);
             this.labelControl24.TabIndex = 35;
-            this.labelControl24.Text = "MCC ROOM TEMP- MUMIDITY";
+            this.labelControl24.Text = "MCC ROOM TEMP- HUMIDITY";
             // 
             // labelControl35
             // 

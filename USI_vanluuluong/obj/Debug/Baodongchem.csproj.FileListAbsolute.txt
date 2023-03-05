@@ -5154,7 +5154,6 @@ G:\TSS\AlarmLG\USI_vanluuluong\bin\Debug\de\DevExpress.XtraVerticalGrid.v19.1.re
 G:\TSS\AlarmLG\USI_vanluuluong\bin\Debug\es\DevExpress.XtraVerticalGrid.v19.1.resources.dll
 G:\TSS\AlarmLG\USI_vanluuluong\bin\Debug\ja\DevExpress.XtraVerticalGrid.v19.1.resources.dll
 G:\TSS\AlarmLG\USI_vanluuluong\bin\Debug\ru\DevExpress.XtraVerticalGrid.v19.1.resources.dll
-G:\TSS\AlarmLG\USI_vanluuluong\obj\Debug\Baodongchem.csproj.AssemblyReference.cache
 G:\TSS\AlarmLG\USI_vanluuluong\obj\Debug\Baodongchem.About.resources
 G:\TSS\AlarmLG\USI_vanluuluong\obj\Debug\Baodongchem.AirPressure.resources
 G:\TSS\AlarmLG\USI_vanluuluong\obj\Debug\Baodongchem.Pack.resources
