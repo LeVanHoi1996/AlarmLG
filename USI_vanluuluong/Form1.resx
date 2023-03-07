@@ -252,4 +252,7 @@
   <metadata name="timer_excel_real.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>525, 16</value>
   </metadata>
+  <metadata name="timerSavePack.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>689, 16</value>
+  </metadata>
 </root>

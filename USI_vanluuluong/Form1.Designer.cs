@@ -62,6 +62,7 @@
             this.BT_RESET_AL = new System.Windows.Forms.Button();
             this.BT_TATCOI = new System.Windows.Forms.Button();
             this.bt_Report = new System.Windows.Forms.Button();
+            this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btPack = new System.Windows.Forms.Button();
             this.bt_MccRoom = new System.Windows.Forms.Button();
@@ -71,12 +72,12 @@
             this.bt_VaccumPump = new System.Windows.Forms.Button();
             this.bt_Waterpump = new System.Windows.Forms.Button();
             this.timer_excel_real = new System.Windows.Forms.Timer(this.components);
-            this.tabMain = new DevExpress.XtraTab.XtraTabControl();
+            this.timerSavePack = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Timer_display
@@ -465,6 +466,20 @@
             this.bt_Report.UseVisualStyleBackColor = false;
             this.bt_Report.Click += new System.EventHandler(this.bt_Report_Click);
             // 
+            // tabMain
+            // 
+            this.tabMain.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(111)))));
+            this.tabMain.Appearance.Options.UseBackColor = true;
+            this.tabMain.AppearancePage.HeaderActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(111)))));
+            this.tabMain.AppearancePage.HeaderActive.Options.UseBackColor = true;
+            this.tabMain.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
+            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabMain.Location = new System.Drawing.Point(149, 4);
+            this.tabMain.Margin = new System.Windows.Forms.Padding(4);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.Size = new System.Drawing.Size(1142, 774);
+            this.tabMain.TabIndex = 5;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -616,19 +631,11 @@
             this.timer_excel_real.Interval = 5000;
             this.timer_excel_real.Tick += new System.EventHandler(this.timer_excel_real_Tick);
             // 
-            // tabMain
+            // timerSavePack
             // 
-            this.tabMain.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(111)))));
-            this.tabMain.Appearance.Options.UseBackColor = true;
-            this.tabMain.AppearancePage.HeaderActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(111)))));
-            this.tabMain.AppearancePage.HeaderActive.Options.UseBackColor = true;
-            this.tabMain.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
-            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabMain.Location = new System.Drawing.Point(149, 4);
-            this.tabMain.Margin = new System.Windows.Forms.Padding(4);
-            this.tabMain.Name = "tabMain";
-            this.tabMain.Size = new System.Drawing.Size(1142, 774);
-            this.tabMain.TabIndex = 5;
+            this.timerSavePack.Enabled = true;
+            this.timerSavePack.Interval = 1000;
+            this.timerSavePack.Tick += new System.EventHandler(this.timerSavePack_Tick);
             // 
             // Form1
             // 
@@ -658,8 +665,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -708,6 +715,7 @@
         private System.Windows.Forms.Button btPack;
         private DevExpress.XtraBars.BarStaticItem st_PLCSIPACK;
         private DevExpress.XtraTab.XtraTabControl tabMain;
+        private System.Windows.Forms.Timer timerSavePack;
     }
 }
 

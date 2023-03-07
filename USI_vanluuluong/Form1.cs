@@ -1698,30 +1698,21 @@ namespace Baodongchem
                 DATA_PLC_SIPACK.tLineB_LV = ((double[])tLV)[1];
                 DATA_PLC_SIPACK.tLineC_LV = ((double[])tLV)[2];
 
-
                 DATA_PLC_SIPACK.isWLineA = ((double[])dtLV)[0];
                 DATA_PLC_SIPACK.isWLineB = ((double[])dtLV)[1];
                 DATA_PLC_SIPACK.isWLineC = ((double[])dtLV)[2];
 
                 if (DATA_PLC_SIPACK.isWLineA == 0)
-                {
                     DATA_PLC_SIPACK.isWWriteA = 1;
-                }
                 else
-                {
                     DATA_PLC_SIPACK.isWWriteA = 0;
-                }
 
                 if (DATA_PLC_SIPACK.isWLineB == 0)
-                {
                     DATA_PLC_SIPACK.isWWriteB = 1;
-                }
                 else { DATA_PLC_SIPACK.isWWriteB = 0; }
 
                 if (DATA_PLC_SIPACK.isWLineC == 0)
-                {
                     DATA_PLC_SIPACK.isWWriteC = 1;
-                }
                 else { DATA_PLC_SIPACK.isWWriteC = 0; }
 
                 DATA_PLC.s7_connectpack = true;
@@ -2137,6 +2128,19 @@ namespace Baodongchem
                 FUME_DUST_CSV();
                 RTO_CSV();
                 MCC_CSV();
+            }
+            catch
+            {
+                KN.Showalert("Kiểm tra đường dẫn file");
+            }
+
+        }
+
+        private void Write_CSVPACK()
+        {
+            try
+            {
+                Date_time_csv = DateTime.Now;
                 PACKA_CSV();
                 PACKB_CSV();
                 PACKC_CSV();
@@ -2721,6 +2725,12 @@ namespace Baodongchem
         private void st_THD_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void timerSavePack_Tick(object sender, EventArgs e)
+        {
+            Thread csv_datap = new Thread(Write_CSVPACK);
+            csv_datap.Start();
         }
     }
 }

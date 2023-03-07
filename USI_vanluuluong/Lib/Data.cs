@@ -69,6 +69,10 @@ namespace Baodongchem
         public static double isWWriteB = 0;
         public static double isWWriteC = 0;
 
+        public static double countA = 0;
+        public static double countB = 0;
+        public static double countC = 0;
+
     }
         public static class DATA_PLC_SI
     {

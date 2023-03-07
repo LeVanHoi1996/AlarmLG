@@ -5174,3 +5174,4 @@ G:\TSS\AlarmLG\USI_vanluuluong\obj\Debug\Baodongchem.csproj.CoreCompileInputs.ca
 G:\TSS\AlarmLG\USI_vanluuluong\obj\Debug\Baodongchem.csproj.CopyComplete
 G:\TSS\AlarmLG\USI_vanluuluong\obj\Debug\Baodongchem.exe
 G:\TSS\AlarmLG\USI_vanluuluong\obj\Debug\Baodongchem.pdb
+G:\TSS\AlarmLG\USI_vanluuluong\obj\Debug\Baodongchem.csproj.AssemblyReference.cache
