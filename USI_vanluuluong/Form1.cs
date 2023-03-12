@@ -1702,6 +1702,14 @@ namespace Baodongchem
                 DATA_PLC_SIPACK.isWLineB = ((double[])dtLV)[1];
                 DATA_PLC_SIPACK.isWLineC = ((double[])dtLV)[2];
 
+
+                DATA_PLC_SIPACK.countA = ((double[])dtLV)[0];
+                DATA_PLC_SIPACK.countB = ((double[])dtLV)[1];
+                DATA_PLC_SIPACK.countC = ((double[])dtLV)[2];
+
+
+
+
                 if (DATA_PLC_SIPACK.isWLineA == 0)
                     DATA_PLC_SIPACK.isWWriteA = 1;
                 else
@@ -2110,6 +2118,7 @@ namespace Baodongchem
         }
 
         private string newFileName;
+        private string newFileNamePack;
         private string newFilePatch;
         private string newFileName1;
         private string newFilePatch1;
@@ -2503,11 +2512,13 @@ namespace Baodongchem
         {
            
             csv.Clear();
-            newFileName = Application.StartupPath + @"\Log\PACKA_log_" + DateTime.Now.ToString("yyyyMMdd") + ".csv";
+            newFileNamePack = Application.StartupPath + @"\Log\PACKA_log_" + DateTime.Now.ToString("yyyyMMdd") + ".csv";
             newFilePatch = Application.StartupPath + @"\Log\";
-            if (DATA_PLC.s7_connectpack && DATA_PLC_SIPACK.isWLineA == 1 && DATA_PLC_SIPACK.isWWriteA == 0)
+            if (DATA_PLC.s7_connectpack && DATA_PLC_SIPACK.isWLineA == 1 && DATA_PLC_SIPACK.isWWriteA == 0  && Properties.Settings.Default.CountA != (int)DATA_PLC_SIPACK.countA)
             {
                 DATA_PLC_SIPACK.isWWriteA = 1;
+                Properties.Settings.Default.CountA = (int)DATA_PLC_SIPACK.countA;
+                Properties.Settings.Default.Save();
                 try
                 {
                     csv.Clear();
@@ -2517,18 +2528,18 @@ namespace Baodongchem
                     DATA_PLC_SIPACK.tLineA_LV.ToString("0.0"));
 
                     csv.AppendLine(newLine);
-                    if (!System.IO.File.Exists(newFileName))
+                    if (!System.IO.File.Exists(newFileNamePack))
                     {
                         System.IO.Directory.CreateDirectory(newFilePatch);
-                        using (FileStream fs = File.Create(newFileName))
+                        using (FileStream fs = File.Create(newFileNamePack))
                         {
 
                         }
-                        File.AppendAllText(newFileName, csv.ToString());
+                        File.AppendAllText(newFileNamePack, csv.ToString());
                     }
                     else
                     {
-                        File.AppendAllText(newFileName, csv.ToString());
+                        File.AppendAllText(newFileNamePack, csv.ToString());
                     };
                 }
                 catch (Exception ex)
@@ -2540,13 +2551,15 @@ namespace Baodongchem
         private void PACKB_CSV()
         {
             csv.Clear();
-            newFileName = Application.StartupPath + @"\Log\PACKB_log_" + DateTime.Now.ToString("yyyyMMdd") + ".csv";
+            newFileNamePack = Application.StartupPath + @"\Log\PACKB_log_" + DateTime.Now.ToString("yyyyMMdd") + ".csv";
             newFilePatch = Application.StartupPath + @"\Log\";
-            if (DATA_PLC.s7_connectpack && DATA_PLC_SIPACK.isWLineB == 1 && DATA_PLC_SIPACK.isWWriteB == 0)
+            if (DATA_PLC.s7_connectpack && DATA_PLC_SIPACK.isWLineB == 1 && DATA_PLC_SIPACK.isWWriteB == 0 && Properties.Settings.Default.CountB != (int)DATA_PLC_SIPACK.countB)
             {
                 try
                 {
                     DATA_PLC_SIPACK.isWWriteB = 1;
+                    Properties.Settings.Default.CountB = (int)DATA_PLC_SIPACK.countB;
+                    Properties.Settings.Default.Save();
                     csv.Clear();
                     string newLine = string.Format("{0},{1},{2},{3},{4}",
                "", Date_time_csv.ToString("dd/MM/yyyy"), Date_time_csv.ToString("HH:mm:ss"),
@@ -2554,18 +2567,18 @@ namespace Baodongchem
                     DATA_PLC_SIPACK.tLineB_LV.ToString("0.0"));
 
                     csv.AppendLine(newLine);
-                    if (!System.IO.File.Exists(newFileName))
+                    if (!System.IO.File.Exists(newFileNamePack))
                     {
                         System.IO.Directory.CreateDirectory(newFilePatch);
-                        using (FileStream fs = File.Create(newFileName))
+                        using (FileStream fs = File.Create(newFileNamePack))
                         {
 
                         }
-                        File.AppendAllText(newFileName, csv.ToString());
+                        File.AppendAllText(newFileNamePack, csv.ToString());
                     }
                     else
                     {
-                        File.AppendAllText(newFileName, csv.ToString());
+                        File.AppendAllText(newFileNamePack, csv.ToString());
                     };
                 }
                 catch (Exception ex)
@@ -2577,13 +2590,15 @@ namespace Baodongchem
         private void PACKC_CSV()
         {
             csv.Clear();
-            newFileName = Application.StartupPath + @"\Log\PACKC_log_" + DateTime.Now.ToString("yyyyMMdd") + ".csv";
+            newFileNamePack = Application.StartupPath + @"\Log\PACKC_log_" + DateTime.Now.ToString("yyyyMMdd") + ".csv";
             newFilePatch = Application.StartupPath + @"\Log\";
-            if (DATA_PLC.s7_connectpack && DATA_PLC_SIPACK.isWLineC == 1 && DATA_PLC_SIPACK.isWWriteC == 0)
+            if (DATA_PLC.s7_connectpack && DATA_PLC_SIPACK.isWLineC == 1 && DATA_PLC_SIPACK.isWWriteC == 0 && Properties.Settings.Default.CountC != (int)DATA_PLC_SIPACK.countC)
             {
                 try
                 {
                     DATA_PLC_SIPACK.isWWriteC = 1;
+                    Properties.Settings.Default.CountC = (int)DATA_PLC_SIPACK.countC;
+                    Properties.Settings.Default.Save();
                     csv.Clear();
                     string newLine = string.Format("{0},{1},{2},{3},{4}",
                 "", Date_time_csv.ToString("dd/MM/yyyy"), Date_time_csv.ToString("HH:mm:ss"),
@@ -2591,18 +2606,18 @@ namespace Baodongchem
                     DATA_PLC_SIPACK.tLineC_LV.ToString("0.0"));
 
                     csv.AppendLine(newLine);
-                    if (!System.IO.File.Exists(newFileName))
+                    if (!System.IO.File.Exists(newFileNamePack))
                     {
                         System.IO.Directory.CreateDirectory(newFilePatch);
-                        using (FileStream fs = File.Create(newFileName))
+                        using (FileStream fs = File.Create(newFileNamePack))
                         {
 
                         }
-                        File.AppendAllText(newFileName, csv.ToString());
+                        File.AppendAllText(newFileNamePack, csv.ToString());
                     }
                     else
                     {
-                        File.AppendAllText(newFileName, csv.ToString());
+                        File.AppendAllText(newFileNamePack, csv.ToString());
                     };
                 }
                 catch (Exception ex)

@@ -8,5 +8,14 @@
     <Setting Name="PLC_Omron_text" Type="System.String" Scope="User">
       <Value Profile="(Default)">COM6</Value>
     </Setting>
+    <Setting Name="CountA" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CountB" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CountC" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
